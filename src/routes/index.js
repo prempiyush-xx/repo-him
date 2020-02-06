@@ -27,6 +27,7 @@ import ResetPassword from "../pages/auth/ResetPassword";
 import Page404 from "../pages/auth/Page404";
 import Page500 from "../pages/auth/Page500";
 
+
 // Layouts
 /*import Boxed from "../pages/layouts/Boxed";
 import SidebarCollapsed from "../pages/layouts/SidebarCollapsed";
@@ -115,6 +116,17 @@ const pageRoutes = {
     }
   ]
 };
+
+const guidanceRoutes = {
+  path : '/guidance',
+  children : [
+    {
+      path : "/guidance/step-one",
+      name : "Step One",
+      component : StepOneInputs
+    }
+  ]
+}
 
 const authRoutes = {
   path: "/auth",
@@ -265,13 +277,6 @@ const iconRoutes = {
   ]
 };
 
-const guidanceRoutes = {
-    path: "/guidance/step-one",
-    name: "Guidance",
-    icon: CheckSquareIcon,
-    component: StepOneInputs,
-    children: null
-}
 
 const formRoutes = {
   path: "/forms",
@@ -412,7 +417,7 @@ export const dashboard = [
 export const landing = [landingRoutes];
 
 // Auth specific routes
-export const page = [authRoutes];
+export const page = [authRoutes, guidanceRoutes];
 
 // All routes
 export default [
